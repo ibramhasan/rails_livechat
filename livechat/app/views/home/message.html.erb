@@ -1,0 +1,10 @@
+<p><%= message.body %></p>
+<script>
+   $('[data-message=true]').on('keypress', function(event){
+      if(event.keyCode == 13 && event.target.value!= '') {
+         App.chat.send_message(event.target.value);
+         event.target.value = '';
+         event.preventDefault();
+       }
+    });
+</script>
